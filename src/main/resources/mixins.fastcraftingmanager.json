@@ -1,0 +1,11 @@
+
+{
+  "compatibilityLevel": "JAVA_8",
+  "package": "com.cleanroommc.fastvanillarecipes.mixins",
+  "refmap": "mixins.fastvanillarecipes.refmap.json",
+  "mixins": [
+    "FastCraftingManager"
+  ],
+  "client": [],
+  "server": []
+}
