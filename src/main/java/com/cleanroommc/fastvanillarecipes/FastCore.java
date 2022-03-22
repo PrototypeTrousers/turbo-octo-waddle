@@ -4,6 +4,7 @@ package com.cleanroommc.fastvanillarecipes;
 import com.google.common.collect.Lists;
 import net.minecraftforge.common.ForgeVersion;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
+import org.spongepowered.asm.launch.MixinBootstrap;
 import zone.rong.mixinbooter.IEarlyMixinLoader;
 
 import javax.annotation.Nullable;
@@ -13,6 +14,10 @@ import java.util.Map;
 @IFMLLoadingPlugin.Name("Fast Core")
 @IFMLLoadingPlugin.MCVersion(ForgeVersion.mcVersion)
 public class FastCore implements IFMLLoadingPlugin, IEarlyMixinLoader {
+
+    public FastCore() {
+        MixinBootstrap.init();
+    }
 
     @Override
     public String[] getASMTransformerClass() {
@@ -41,6 +46,6 @@ public class FastCore implements IFMLLoadingPlugin, IEarlyMixinLoader {
     @Override
     public List<String> getMixinConfigs() {
         return Lists.newArrayList(
-                "mixins.fastcraftingmanager.json");
+                "mixins.fastvanillarecipes.json");
     }
 }

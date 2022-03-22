@@ -102,8 +102,10 @@ jar {
     manifest {
 		def attribute_map = [:]
 		if (project.use_coremod) {
-			attribute_map['FMLCorePlugin'] = project.coremod_plugin_class_name
+			attribute_map['FMLCorePlugin'] = coremod_plugin_class_name
 		}
+		attribute_map['ForceLoadAsMod'] = "true"
+
 		if (project.use_mixins) {
 			attribute_map['TweakClass'] = 'org.spongepowered.asm.launch.MixinTweaker'
 		}
